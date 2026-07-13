@@ -1,0 +1,83 @@
+.NotificationsPage {
+    min-height: calc(100vh - 2rem);
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.NotificationsHeader {
+    display: grid;
+    grid-template-columns: 3rem 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    background: var(--cardColor);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.NotificationsHeader h2 {
+    margin: 0;
+}
+
+.iconButton img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.readButton {
+    height: 2.4rem;
+    padding: 0 1rem;
+}
+
+.NotificationsList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.NotificationItem {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 0.8rem;
+    align-items: center;
+    background: var(--cardColor);
+    border-radius: 0.5rem;
+    padding: 0.9rem;
+    cursor: pointer;
+}
+
+.NotificationItem.unread {
+    border-left: 4px solid var(--purplePain);
+    background: white;
+}
+
+.NotificationItem img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.NotificationItem div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.NotificationItem small,
+.emptyState {
+    color: var(--gray);
+}
+
+@media (max-width: 600px) {
+    .NotificationsHeader {
+        grid-template-columns: 2.5rem 1fr;
+    }
+
+    .readButton {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+}
